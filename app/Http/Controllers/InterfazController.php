@@ -38,8 +38,10 @@ class interfazController extends Controller
         
         if($especie == "1"){
             $variantes = DB::table('variante_perro')->get();
-            return view('pages.mascota.plan', compact('variantes', 'mascota', 'estado'));            
+            return view('pages.mascota.plan', compact('variantes', 'mascota', 'estado')); 
+
         }elseif($especie == "2"){
+            
             $variantes = DB::table('variante_gato')->get();
             return view('pages.mascota.plan2', compact('variantes', 'mascota', 'estado'));   
             
