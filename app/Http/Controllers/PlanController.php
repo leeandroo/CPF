@@ -798,15 +798,15 @@ class PlanController extends Controller
         return redirect('/user-profile/mascota')->with('message', array('title' => '¡Contrataste el Plan con ÉXITO!', 'body'=>'Tu mascota ya cuenta con un plan de salud preventivo'));        
     }
 
-    public function index(){
+    public function index(User $user){
 
         $planes = DB::table('plan as pl')
         ->join('mascota as ms','pl.mascota_id', '=','ms.id')
         ->select('pl.id','ms.nombre', 'pl.created_at', 'pl.total')
+        ->where('pl.user_id', '=', $user->id)
         ->get();
-        $pets = Mascota::all();
 
-        return view('pages.plan.index', compact('planes', 'pets'));
+        return view('pages.plan.index', compact('planes'));
     }
 
     public function detalle($id){

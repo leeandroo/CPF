@@ -30,7 +30,7 @@ Route::get('/mascota/create','MascotaController@listEspecies');//redirecciona al
 Route::post('/plan/contratarp','PlanController@registerPlanDog');//redirecciona al controlador del plan para realizar la insersion en la tabla "plan" y "plan_variante" para la especie perro
 Route::post('/plan/contratarg','PlanController@registerPlanCat');//redirecciona al controlador del plan para realizar la insersion en la tabla "plan" y "plan_variante" para la especie gato
 //RUTAS Planes
-Route::get('/user-profile/plan', 'PlanController@index'); // redirecciona al controlador los planes para obtener informacion y depues ir a la vista de los planes contratados
+Route::get('/user-profile/plan/{user}', 'PlanController@index'); // redirecciona al controlador los planes para obtener informacion y depues ir a la vista de los planes contratados
 Route::get('/detalle_plan/{petid}','PlanController@detalle');//redirecciona a la vista del plan detalle con un atributo el ID de la mascota del plan
 
 //redirecciona al controlador de la mascota para obtener las razas    

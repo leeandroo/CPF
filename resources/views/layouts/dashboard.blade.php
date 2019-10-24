@@ -63,7 +63,8 @@
 							<i class="far fa-calendar-alt ml-2 mr-4 fa-fw icono"></i>Mis mascotas
 							<div class="list-mark"></div>
 						</a>
-						<a href="{{ url('/user-profile/plan') }}" class="list-item mt-1 @yield('plan')">
+					
+						<a href="{{url('/user-profile/plan', ['user' => Auth::user()->id ])}}" class="list-item mt-1 @yield('plan')">
 							<i class="far fa-file-alt ml-2 mr-4 fa-fw icono"></i>Mis planes 
 							<div class="list-mark"></div>
 						</a> 
